@@ -1,0 +1,5 @@
+@import "../../../utils/styles/themes/index";
+
+.title-primary {
+  @include title-primary;
+}

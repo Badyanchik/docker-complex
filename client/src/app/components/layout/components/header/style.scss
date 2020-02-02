@@ -1,0 +1,10 @@
+@import "../../../../utils/styles/themes/index";
+
+.header {
+  padding: 16px 0;
+
+  &__logo img {
+    width: auto;
+    max-height: 51px;
+  }
+}

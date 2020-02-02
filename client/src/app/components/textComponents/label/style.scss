@@ -1,0 +1,18 @@
+@import "../../../utils/styles/themes/index";
+
+.text-label {
+  text-align: center;
+  margin-bottom: 20px;
+
+  &-container.container {
+    padding: 0;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}

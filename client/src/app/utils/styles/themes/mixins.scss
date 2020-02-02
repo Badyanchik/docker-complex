@@ -1,0 +1,97 @@
+@import "./colors";
+@import "./fonts";
+
+@mixin button-default {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  min-height: auto;
+  padding: 16px 48px;
+  border-radius: 3.5em/100%;
+  border: none;
+  outline: none;
+  background-color: $color-green;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  &[disabled] {
+    opacity: .5;
+    background-color: $color-black;
+    cursor: not-allowed;
+  }
+  &:hover {
+    background-color: $color-green-2;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button-secondary {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  min-height: auto;
+  padding: 2px 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $color-green;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  &[disabled] {
+    opacity: .5;
+    color: $color-black;
+    cursor: not-allowed;
+  }
+  &:hover {
+    color: $color-green-2;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin title-primary {
+  margin: 0 auto 40px;
+  overflow: hidden;
+  line-height: 1.4;
+  font-family: $font-multi;
+  text-align: center;
+  font-size: 38px;
+  color: $color-green;
+  font-weight: 400;
+
+  span {
+    position: relative;
+    max-width: 80%;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100vw;
+      top: 50%;
+      margin-top: -1px;
+      background-color: $color-green;
+    }
+
+    &:before {
+      right: 100%;
+      margin-right: 24px;
+    }
+    &:after {
+      left: 100%;
+      margin-left: 24px;
+    }
+  }
+}
