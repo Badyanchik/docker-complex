@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t badyanchik/docker-complex-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run badyanchik/docker-complex-test npm test -- --watchAll=false
+
+after_success:
+  - docker build -t badyanchik/complex-client ./client
+  - docker build -t badyanchik/complex-server ./server
+  - docker build -t badyanchik/complex-worker ./worker
+  - docker build -t badyanchik/complex-nginx ./nginx
