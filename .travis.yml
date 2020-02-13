@@ -13,3 +13,10 @@ after_success:
   - docker build -t badyanchik/complex-server ./server
   - docker build -t badyanchik/complex-worker ./worker
   - docker build -t badyanchik/complex-nginx ./nginx
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  # Push images to the docker hub
+  - docker push badyanchik/complex-client
+  - docker push badyanchik/complex-server
+  - docker push badyanchik/complex-worker
+  - docker push badyanchik/complex-nginx
